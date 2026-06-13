@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://username.github.io/2026FIFAWorldCup",
+  "homepage": "https://6eanut.github.io/2026FIFAWorldCup",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
