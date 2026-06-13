@@ -2,7 +2,7 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recha
 import { Card } from "../ui/Card";
 import type { Player } from "../../types";
 import { leagueGroups } from "../../utils/data-transformers";
-import { chartColors } from "../../utils/chart-helpers";
+import { chartColors, isDarkMode } from "../../utils/chart-helpers";
 
 interface LeagueDistributionProps {
   data: Player[];
@@ -10,7 +10,7 @@ interface LeagueDistributionProps {
 
 export function LeagueDistribution({ data }: LeagueDistributionProps) {
   const groups = leagueGroups(data);
-  const colors = chartColors(false);
+  const colors = chartColors(isDarkMode());
 
   return (
     <Card title="League Distribution" subtitle="Big Five leagues shown individually, others aggregated">

@@ -50,3 +50,7 @@ export function confederationColor(code: string, isDark: boolean): string {
   const map = isDark ? CONFEDERATION_COLORS_DARK : CONFEDERATION_COLORS;
   return map[code] ?? "oklch(65% 0 0)";
 }
+
+export function isDarkMode(): boolean {
+  return document.documentElement.classList.contains("dark");
+}

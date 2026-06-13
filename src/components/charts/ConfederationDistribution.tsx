@@ -2,7 +2,7 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { Card } from "../ui/Card";
 import type { Player } from "../../types";
 import { confederationStats } from "../../utils/data-transformers";
-import { confederationColor } from "../../utils/chart-helpers";
+import { confederationColor, isDarkMode } from "../../utils/chart-helpers";
 
 interface ConfederationDistributionProps {
   data: Player[];
@@ -27,7 +27,7 @@ export function ConfederationDistribution({ data }: ConfederationDistributionPro
               label={({ name, value }) => `${name} ${value}`}
             >
               {stats.map((s) => (
-                <Cell key={s.code} fill={confederationColor(s.code, false)} />
+                <Cell key={s.code} fill={confederationColor(s.code, isDarkMode())} />
               ))}
             </Pie>
             <Tooltip
